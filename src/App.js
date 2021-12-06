@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import Loading from './Loading'
-import Home from './Home'
-import Header from './Header'
-import BlogDetails from './BlogDetails'
+import Loading from './components/Loading'
+import Home from './pages/Home'
+import Header from './components/Header'
+import BlogDetails from './pages/BlogDetails'
 import {
   BrowserRouter as Router,
   Routes ,

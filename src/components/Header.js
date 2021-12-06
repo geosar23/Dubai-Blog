@@ -15,9 +15,6 @@ const Header = ({user, setUser}) => {
 
 
     e.preventDefault()
-    console.log('hey steve',e.target.username.value)
-    console.log('hey saros',e.target.password.value)
-
     try {
       const response=await fetch(url, {
         method:'POST',

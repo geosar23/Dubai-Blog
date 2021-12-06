@@ -1,7 +1,6 @@
 import React , {useState, useEffect} from "react";
 import { Link, useParams } from "react-router-dom";
-import Map from "./Map";
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
+import Map from "../components/Map";
 
 const BlogDetails = ({blogs,user}) => {
   
