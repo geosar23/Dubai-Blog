@@ -31,6 +31,8 @@ Variables
   --clr-grey-9: hsl(212, 33%, 89%);
   --clr-grey-10: hsl(210, 36%, 96%);
   --clr-white: #fff;
+  --clr-gold: #c59d5f;
+
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-green-dark: hsl(125, 67%, 44%);
@@ -162,6 +164,7 @@ main {
 .title {
   text-align: center;
   margin-bottom: 4rem;
+  color: var(--clr-gold);
 }
 .underline {
   width: 6rem;
@@ -230,7 +233,7 @@ main {
 
 .header {
   overflow: hidden;
-  background: var(--clr-white);
+  background: var(--clr-primary-1);
   width: 100%;
   margin: auto;
   text-align: center;
@@ -244,6 +247,7 @@ main {
 .logo_home{
   position: absolute;
   padding:10px;
+  color:var(--clr-gold)
 }
 
 
@@ -258,8 +262,12 @@ main {
 .form-container {
   max-width: 300px;
   padding: 10px;
-  background-color: white;
+  background-color:var(--clr-primary-1);
   margin:auto;
+}
+
+.form-container h1{
+  color:var(--clr-gold)
 }
 
 /* Full-width input fields */
@@ -375,7 +383,7 @@ label {
 }
 
 a {
-  color:var(--clr-primary-5);
+  color:var(--clr-gold);
 }
 a:hover {
    color:var(--clr-primary-1);

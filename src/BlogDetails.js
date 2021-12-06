@@ -20,7 +20,7 @@ const BlogDetails = ({blogs,user}) => {
       return(
         <article className="single-blog">
 
-          <Link to={currentBlog.photo.url}><img src={currentBlog.photo.url} alt={currentBlog.title}></img></Link>
+          <Link to={currentBlog.photo.url} element={<img src={currentBlog.photo.url} alt={currentBlog.title}></img>}><img src={currentBlog.photo.url} alt={currentBlog.title}></img></Link>
           <footer>
             <div className="blog-info">
               <h4>{currentBlog.title}</h4>

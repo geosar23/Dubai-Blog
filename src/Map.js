@@ -1,36 +1,17 @@
-import React, { Component } from "react";
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
-import GoogleMapReact from 'google-map-react';
+import React from "react";
 
-const Map = ({ text }) => <div>{text}</div>;
 
-class SimpleMap extends Component {
-    static defaultProps = {
-      center: {
-        lat: 59.95,
-        lng: 30.33
-      },
-      zoom: 11
-    };
+function Map({lat,lng}){
 
-    render() {
+  const url=`https://maps.google.com/maps?q=${lng},${lat}&output=embed`
+
         return (
-          // Important! Always set the container height explicitly
-          <div style={{ height: '50vh', width: '100%' }}>
-            <GoogleMapReact
-              bootstrapURLKeys={{ key: 'AIzaSyBMzUwZXKWkWBYO1MB-zh6CpdjA_QoNWoU' }}
-              defaultCenter={this.props.center}
-              defaultZoom={this.props.zoom}
-            >
-              <Map
-                lat={59.955413}
-                lng={30.337844}
-                text="My Marker"
-              />
-            </GoogleMapReact>
-          </div>
-        );
-      }
+            <div style={{width: '100%'}}>
+              <iframe width="100%" height="600" frameBorder="0" src={url}>
+                <a href="https://www.gps.ie/sport-gps/">gps watches</a>
+              </iframe>
+            </div>
+        )
     }
     
-    export default SimpleMap;
+    export default Map
