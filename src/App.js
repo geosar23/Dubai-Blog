@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Loading from './components/Loading'
 import Home from './pages/Home'
 import Header from './components/Header'
-import BlogDetails from './pages/BlogDetails'
+import Blog from './pages/Blog'
 import {
   BrowserRouter as Router,
   Routes ,
@@ -50,7 +50,7 @@ function App() {
       <Routes>
 
         <Route exact path='/' element={ <Home blogs={blogs} user={user}/>}/>
-        <Route exact path='/blog/:blogId' element={<BlogDetails blogs={blogs}/>}/>
+        <Route exact path='/blog/:blogId' element={<Blog blogs={blogs}/>}/>
        
       </Routes>
       </main>
