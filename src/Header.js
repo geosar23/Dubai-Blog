@@ -1,13 +1,18 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { FaBars } from 'react-icons/fa';
+import React, {useState} from 'react';
 
 const url='https://firefighter-5325.instashop.ae/api/users/login'
 
-const Header = ({setUser}) => {
+const Header = ({user, setUser}) => {
 
   const [showPopup,setShowPopup]=useState(false)
 
+
+
   async function signIn(e){
+
+    const url='https://firefighter-5325.instashop.ae/api/users/login'
+
+
     e.preventDefault()
     console.log('hey steve',e.target.username.value)
     console.log('hey saros',e.target.password.value)
@@ -16,6 +21,8 @@ const Header = ({setUser}) => {
       const response=await fetch(url, {
         method:'POST',
         headers: {'Content-Type': 'application/json'},
+        credentials:'include',
+        mode:'cors',
         body: JSON.stringify({
           username: e.target.username.value,
           password: e.target.password.value
@@ -26,6 +33,21 @@ const Header = ({setUser}) => {
       setShowPopup(false)
       console.log(body)
     } catch (error) {
+      console.error(error)
+    }
+
+  }
+
+  async function signOut(){
+
+    const url='https://firefighter-5325.instashop.ae/api/users/logout'
+
+    try{
+      await fetch(url,{
+        credentials:'include'
+      })
+      setUser()
+    }catch (error){
       console.error(error)
     }
 
@@ -51,13 +73,19 @@ const Header = ({setUser}) => {
     )
   }
 
+
+
+
+
   return (
     <div className="header">
-      <a href="#default" className="logo">InstaBlog</a>
-      <div className="header-right">
-        <a className="active" href="#home">Sign In</a>
-
-        <button className="open-button" onClick={()=>setShowPopup(true)}>Open Form</button>
+      <div className="logo_home"><i className="fas fa-home fa-3x"><h4>HOME</h4></i></div>
+    
+      <div className="signIn">
+        {user
+          ? <button className="btn" onClick={signOut}>Sign Out</button>
+          : <button className="btn" onClick={()=>setShowPopup(true)}>Sign In</button>
+        }
 
         {showPopup && <Popup/>}
 

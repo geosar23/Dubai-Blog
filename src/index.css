@@ -183,7 +183,7 @@ main {
 }
 .single-blog img {
   width: 100%;
-  height: 20rem;
+  height: 100%;
   object-fit: cover;
   border-top-right-radius: var(--radius);
   border-top-left-radius: var(--radius);
@@ -231,70 +231,27 @@ main {
 .header {
   overflow: hidden;
   background: var(--clr-white);
-  padding: 20px 10px;
-}
-
-
-.header a {
-  float: left;
+  width: 100%;
+  margin: auto;
   text-align: center;
-  padding: 10px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
-}
-
-/* set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
-.header a.logo {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.header a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.header a.active {
-  background-color: var(--clr-primary-5);
-  color: white;
-}
-
-.header-right {
-  float: right;
-}
-
-@media screen and (max-width: 500px) {
-  .header a {
-    float: left;
-    display: block;
-    text-align: left;
-  }
-  .header-right {
-    float: right;
-  }
+  padding:10px;
+  position: sticky;
+  top:0;
 }
 
 
-/* Button used to open the contact form - fixed at the bottom of the page */
-.open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  width: 280px;
+
+.logo_home{
+  position: absolute;
+  padding:10px;
 }
 
-/* The popup form - hidden by default */
+
+
 .form-popup {
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
+  width: 100%;
+  border-radius: 10px;
+  
 }
 
 /* Add styles to the form container */
@@ -302,6 +259,7 @@ main {
   max-width: 300px;
   padding: 10px;
   background-color: white;
+  margin:auto;
 }
 
 /* Full-width input fields */
@@ -339,4 +297,79 @@ main {
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
+}
+
+
+
+label {
+  color:white;
+  width: 100%;
+  text-align: center;
+}
+
+
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  display: grid;
+  gap: 3rem 2rem;
+  justify-items: center;
+}
+.menu-item {
+  display: grid;
+  gap: 1rem 2rem;
+  max-width: 25rem;
+  margin-bottom: 50px;
+}
+.photo {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+  border: 0.25rem solid;
+  border-radius: var(--radius);
+  display: block;
+}
+.item-info header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px dotted var(--clr-grey-5);
+}
+.item-info h4 {
+  margin-bottom: 0.5rem;
+  color: var(--clr-primary-2);  
+}
+.price {
+  color: var(--clr-primary-2);
+}
+.item-text {
+  margin-bottom: 15px;
+ 
+  padding-top: 1rem;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp:4;
+  -webkit-box-orient: vertical;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-item {
+    grid-template-columns: 225px 1fr;
+    gap: 0 1.25rem;
+    max-width: 40rem;
+  }
+  .photo {
+    height: 175px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .section-center {
+    width: 95vw;
+    grid-template-columns: 1fr 1fr;
+  }
+  .photo {
+    height: 150px;
+  }
 }

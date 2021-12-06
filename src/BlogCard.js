@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const BlogCard = ({id,photo_thumb,info,price,title,user}) => {
+const BlogCard = ({objectId,photo_thumb,title,user,short_info}) => {
   return (
-    <article className="single-blog">
-
-      <img src={photo_thumb.url} alt={title}></img>
-      <footer>
-        <div className="blog-info">
-          <h4>{title}</h4>
-          <h4 className="blog-price">{price}</h4>
-        </div>
-        <p>{info}</p>
+    <article key={objectId} className='menu-item'>
+      <img src={photo_thumb.url} alt={title} className='photo' />
+      <div className='item-info'>
+        <header>
+          <Link to={"/blog/"+objectId}><h4> {title}</h4></Link>
+        </header>
+        <p className='item-text'>{short_info}</p>
         {user && <button className="delete-btn">Edit</button>} 
-      </footer>
-
+      </div>
     </article>
   )
 };

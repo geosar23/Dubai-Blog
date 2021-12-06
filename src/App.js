@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react'
 import Loading from './Loading'
 import Home from './Home'
 import Header from './Header'
+import BlogDetails from './BlogDetails'
+import {
+  BrowserRouter as Router,
+  Routes ,
+  Route,
+} from "react-router-dom";
 
-
-const dummyURL = 'https://course-api.com/react-tours-project'
 const url= 'https://firefighter-5325.instashop.ae/api/landmarks'
 
 
@@ -39,13 +43,18 @@ function App() {
   }
 
   return (
-    <div>
-      <Header setUser={setUser}/>
+    <Router>
+     
+      <Header setUser={setUser} user={user}/>
       <main>
-        <Home blogs={blogs} user={user}/>
+      <Routes>
+
+        <Route exact path='/' element={ <Home blogs={blogs} user={user}/>}/>
+        <Route exact path='/blog/:blogId' element={<BlogDetails blogs={blogs}/>}/>
+       
+      </Routes>
       </main>
-    </div>
-    
+    </Router>    
   )
 }
 
