@@ -22,15 +22,13 @@ const Header = ({user, setUser}) => {
       const response=await fetch(url, {
         method:'POST',
         headers: {'Content-Type': 'application/json'},
-        credentials:'include',
-        mode:'cors',
         body: JSON.stringify({
           username: e.target.username.value,
           password: e.target.password.value
         })
       })
       const body=await response.json()
-      setUser(body.userId)
+      setUser(body)
       setShowPopup(false)
       console.log(body)
     } catch (error) {
@@ -45,7 +43,9 @@ const Header = ({user, setUser}) => {
 
     try{
       await fetch(url,{
-        credentials:'include'
+        headers:{
+          'x-sessionToken' : user.sessionToken
+        }
       })
       setUser()
     }catch (error){
