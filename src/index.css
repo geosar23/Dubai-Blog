@@ -183,11 +183,11 @@ main {
 }
 .single-blog img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
-  border-top-right-radius: var(--radius);
-  border-top-left-radius: var(--radius);
 }
+
+
 .blog-info {
   display: flex;
   justify-content: space-between;
@@ -372,4 +372,11 @@ label {
   .photo {
     height: 150px;
   }
+}
+
+a {
+  color:var(--clr-primary-5);
+}
+a:hover {
+   color:var(--clr-primary-1);
 }

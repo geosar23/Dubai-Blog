@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom'
 
 const url='https://firefighter-5325.instashop.ae/api/users/login'
 
@@ -79,7 +80,7 @@ const Header = ({user, setUser}) => {
 
   return (
     <div className="header">
-      <div className="logo_home"><i className="fas fa-home fa-3x"><h4>HOME</h4></i></div>
+      <Link to='/'><div className="logo_home"><i className="fas fa-home fa-3x"><h4>HOME</h4></i></div></Link>
     
       <div className="signIn">
         {user
