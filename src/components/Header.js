@@ -1,54 +1,30 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom'
-
-const url='https://firefighter-5325.instashop.ae/api/users/login'
+import {Link} from 'react-router-dom';
+import * as userService from '../services/user';
 
 const Header = ({user, setUser}) => {
-
   const [showPopup,setShowPopup]=useState(false)
 
-
-
   async function signIn(e){
-
-    const url='https://firefighter-5325.instashop.ae/api/users/login'
-
-
     e.preventDefault()
+    const username = e.target.username.value
+    const password = e.target.password.value
     try {
-      const response=await fetch(url, {
-        method:'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          username: e.target.username.value,
-          password: e.target.password.value
-        })
-      })
-      const body=await response.json()
-      setUser(body)
-      setShowPopup(false)
-      console.log(body)
+        const response = await userService.signIn(username, password)
+        setUser(response)
+        setShowPopup(false)
     } catch (error) {
       console.error(error)
     }
-
   }
 
   async function signOut(){
-
-    const url='https://firefighter-5325.instashop.ae/api/users/logout'
-
-    try{
-      await fetch(url,{
-        headers:{
-          'x-sessionToken' : user.sessionToken
-        }
-      })
+    try {
+      await userService.signOut(user)
       setUser()
-    }catch (error){
+    } catch (error) {
       console.error(error)
     }
-
   }
 
   const Popup = () => {
@@ -63,17 +39,12 @@ const Header = ({user, setUser}) => {
             <label>Password</label>
             <input type="password" name="password" placeholder="Enter Password"  required/>
       
-
             <button type="submit" className="btn">Login</button>
             <button type="button" className="btn cancel" onClick={()=>setShowPopup(false)}>Close</button>
           </form>
         </div>
     )
   }
-
-
-
-
 
   return (
     <div className="header">

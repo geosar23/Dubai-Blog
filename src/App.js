@@ -8,8 +8,8 @@ import {
   Routes ,
   Route,
 } from "react-router-dom";
+import * as blogService from './services/blog'
 
-const url= 'https://firefighter-5325.instashop.ae/api/landmarks'
 
 
 function App() {
@@ -19,16 +19,13 @@ function App() {
 
   const fetchBlogs= async () => {
     setLoading(true)
-
     try{
-      const response=await fetch(url)
-      const blogs=await response.json()
-      console.log(response)
+      const response =await blogService.getBlogs()
+      setBlogs(response)
+    }catch(error){  
+      console.error(error)
+    }finally{
       setLoading(false)
-      setBlogs(blogs)
-    }catch(error){
-      setLoading(false)
-      console.log(error)
     }
   }
 
@@ -48,10 +45,8 @@ function App() {
       <Header setUser={setUser} user={user}/>
       <main>
       <Routes>
-
         <Route exact path='/' element={ <Home blogs={blogs} user={user}/>}/>
-        <Route exact path='/blog/:blogId' element={<Blog blogs={blogs}/>}/>
-       
+        <Route exact path='/blog/:blogId' element={<Blog blogs={blogs}/>}/>      
       </Routes>
       </main>
     </Router>    
