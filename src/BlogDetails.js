@@ -1,5 +1,7 @@
 import React , {useState, useEffect} from "react";
 import { Link, useParams } from "react-router-dom";
+import Map from "./Map";
+import { Wrapper, Status } from "@googlemaps/react-wrapper";
 
 const BlogDetails = ({blogs,user}) => {
   
@@ -12,6 +14,7 @@ const BlogDetails = ({blogs,user}) => {
     
       setCurrentBlog(selectedBlog)
     },[])
+
 
     const Content = () => {
       return(
@@ -26,7 +29,10 @@ const BlogDetails = ({blogs,user}) => {
             </div>
             <p>{currentBlog.short_info}</p>
             <a target="_blank" href={currentBlog.url}>{currentBlog.url}</a>
-            {user && <button className="delete-btn">Edit</button>} 
+            {user && <button className="delete-btn">Edit</button>}
+
+            <Map lat={currentBlog.location[0]} lng={currentBlog.location[1]}/>
+            
           </footer>
 
         </article>

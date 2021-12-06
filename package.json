@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@googlemaps/react-wrapper": "^1.1.16",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^7.2.1",
+    "google-map-react": "^2.1.10",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^4.3.1",
