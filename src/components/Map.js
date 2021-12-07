@@ -7,7 +7,7 @@ function Map({lat,lng}){
 
         return (
             <div style={{width: '100%'}}>
-              <iframe width="100%" height="600" frameBorder="0" src={url}>
+              <iframe title="map" width="100%" height="600" frameBorder="0" src={url}>
               </iframe>
             </div>
         )

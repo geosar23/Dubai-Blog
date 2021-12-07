@@ -1,21 +1,15 @@
-import React , {useState, useEffect} from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import BlogDetails from "../components/BlogDetails";
 
-const Blog = ({blogs,user}) => {
+const Blog = ({blogs, setBlogs, user}) => {
   
   const params=useParams()
-
-  const [currentBlog,setCurrentBlog]=useState()
-
-    useEffect( () => {
-      const selectedBlog = blogs.find((blog)=>blog.objectId===params.blogId)
-      setCurrentBlog(selectedBlog)
-    },[])
+  const currentBlog= blogs.find((blog)=>blog.objectId===params.blogId)
 
     return(
       <div>
-        {currentBlog && <BlogDetails user={user} blog={currentBlog}/>}
+        {currentBlog && <BlogDetails user={user} setBlogs={setBlogs} blog={currentBlog}/>}
       </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import BlogCard from '../components/BlogCard';
 
-const Home = ({blogs, user}) => {
+const Home = ({blogs}) => {
   return (
     <section>
 
@@ -12,7 +12,7 @@ const Home = ({blogs, user}) => {
 
       <div>
         {blogs.map((blog)=>{
-          return <BlogCard key={blog.id} {...blog} user={user}/>
+          return <BlogCard key={blog.objectId} {...blog}/>
         })}
       </div>
 
