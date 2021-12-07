@@ -9,7 +9,8 @@ const BlogDetails = ({user, blog ,setBlogs}) => {
   const [editedBlog,setEditedBlog]=useState({
     objectId:blog.objectId,
     title:blog.title,
-    short_info:blog.short_info
+    short_info:blog.short_info,
+    description:blog.description
   })
 
   async function updateBlog(e){
@@ -18,6 +19,7 @@ const BlogDetails = ({user, blog ,setBlogs}) => {
       await blogService.updateBlog(editedBlog,user)
       const response=await blogService.getBlogs()
       setBlogs(response)
+      setPopUp(false)
     } catch (error) {
       console.error(error)
     }
@@ -25,9 +27,9 @@ const BlogDetails = ({user, blog ,setBlogs}) => {
 
 
   const editBlog = (
-    <form onSubmit={updateBlog} className="edit-btn-container">
-      <button type="submit" className="edit-btn" onClick={()=>setPopUp(true)}>Edit</button>
-    </form>
+    <div className="edit-btn-container">
+      <button className="edit-btn" onClick={()=>setPopUp(true)}>Edit</button>
+    </div>
   )
 
     return(
@@ -40,11 +42,11 @@ const BlogDetails = ({user, blog ,setBlogs}) => {
             
             <h4 className="blog-price"><i className="fas fa-map-marker-alt"></i> {blog.location[0]} , {blog.location[1]}</h4>
           </div>
-          <p>{blog.short_info}</p>
+          <p>{blog.description}</p>
           <a target="_blank" rel="noreferrer" href={blog.url}>{blog.url}</a>
           <Map lat={blog.location[0]} lng={blog.location[1]}/>
           {user && editBlog}
-          <Popup trigger={popUp} setPopUp={setPopUp} updateBlog={updateBlog} editedBlog={editedBlog} setEditedBlog={setEditedBlog}>
+          <Popup popUp={popUp} setPopUp={setPopUp} updateBlog={updateBlog} editedBlog={editedBlog} setEditedBlog={setEditedBlog}>
             <h3>My PopUp</h3>
           </Popup>      
         </footer>

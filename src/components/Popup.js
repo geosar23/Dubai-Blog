@@ -1,8 +1,8 @@
 import React from "react";
 
-function Popup({trigger,setPopUp,updateBlog,editedBlog,setEditedBlog}){
+function Popup({popUp,setPopUp,updateBlog,editedBlog,setEditedBlog}){
     
-    return(trigger) ? (
+    return popUp  ? (
         <div className="popup">
             <div className="popup-inner">
                 <button className="close-btn" onClick={()=>setPopUp(false)}><i className="fas fa-times fa-3x"></i></button>
@@ -15,22 +15,14 @@ function Popup({trigger,setPopUp,updateBlog,editedBlog,setEditedBlog}){
                     <textarea className="infoTextArea" value={editedBlog.short_info} onChange={(e)=>setEditedBlog({...editedBlog,short_info:e.target.value})}></textarea>
                     <br></br>
                     <label>Description</label>
-                    <textarea className="descriptionTextArea" value={editedBlog.short_info} onChange={(e)=>setEditedBlog({...editedBlog,short_info:e.target.value})}></textarea>
+                    <textarea className="descriptionTextArea" value={editedBlog.description} onChange={(e)=>setEditedBlog({...editedBlog,description:e.target.value})}></textarea>
                     <br></br>
-                    {/* <label>Latitude</label>
-                    <input value={details.location[0]}></input>
-
-                    <label>Longitude</label>
-                    <input value={details.location[1]}></input>
-
-                    <label>url</label>
-                    <input value={details.url}></input> */}
                     <button type="submit" className="edit-btn">Save</button>
                 </form>
                 
             </div>
         </div>
-    ) : ""
+    ) : <></>
 }
 
 export default Popup
