@@ -419,7 +419,7 @@ a:hover {
 }
 
 .popup-form textarea{
-  font-size: 14px;
+  font-size: 16px;
   width: 100%;
   resize: vertical;
   border: 0.25rem solid;
@@ -436,3 +436,30 @@ a:hover {
 .descriptionTextArea{
   height: 300px;
 }
+
+@media screen and (min-height: 568px) {
+  .popup-form textarea{
+    font-size: 12px;
+  }
+  .infoTextArea{
+    height: 150px;
+  }
+  
+  .descriptionTextArea{
+    height: 150px;
+  }
+}
+
+@media screen and (min-height: 640px) {
+  .popup-form textarea{
+    font-size: 15px;
+  }
+  .infoTextArea{
+    height: 150px;
+  }
+  
+  .descriptionTextArea{
+    height: 200px;
+  }
+}
+

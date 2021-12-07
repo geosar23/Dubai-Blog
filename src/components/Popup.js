@@ -17,7 +17,6 @@ function Popup({trigger,setPopUp,updateBlog,editedBlog,setEditedBlog}){
                     <label>Description</label>
                     <textarea className="descriptionTextArea" value={editedBlog.short_info} onChange={(e)=>setEditedBlog({...editedBlog,short_info:e.target.value})}></textarea>
                     <br></br>
-
                     {/* <label>Latitude</label>
                     <input value={details.location[0]}></input>
 
@@ -26,7 +25,6 @@ function Popup({trigger,setPopUp,updateBlog,editedBlog,setEditedBlog}){
 
                     <label>url</label>
                     <input value={details.url}></input> */}
-
                     <button type="submit" className="edit-btn">Save</button>
                 </form>
                 

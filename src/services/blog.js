@@ -6,6 +6,14 @@ async function getBlogs(){
     return blogs
 }
 
+async function getBlog(blog){
+    const url=`https://firefighter-5325.instashop.ae/api/landmarks/${blog.objectId}`
+
+    const response=await fetch(url)
+    const currentBlog=await response.json()
+    return currentBlog
+}
+
 async function updateBlog(blog,user){
     const url=`https://firefighter-5325.instashop.ae/api/landmarks/${blog.objectId}`
 
@@ -25,5 +33,6 @@ async function updateBlog(blog,user){
 
 export {
     getBlogs,
-    updateBlog
+    getBlog,
+    updateBlog,
 }
