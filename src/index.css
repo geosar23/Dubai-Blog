@@ -200,35 +200,6 @@ main {
 .blog-info h4 {
   margin-bottom: 0;
 }
-.single-blog button {
-  background: transparent;
-  border-color: transparent;
-  text-transform: capitalize;
-  color: var(--clr-primary-5);
-  font-size: 1rem;
-  cursor: pointer;
-  padding-left: 0.25rem;
-}
-.blog-price {
-  color: var(--clr-primary-5);
-  background: var(--clr-primary-10);
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius);
-}
-.single-blog footer {
-  padding: 1.5rem 2rem;
-}
-.single-blog .delete-btn {
-  display: block;
-  width: 200px;
-  margin: 1rem auto 0 auto;
-  color: var(--clr-red-dark);
-  letter-spacing: var(--spacing);
-  background: transparent;
-  border: 1px solid var(--clr-red-dark);
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius);
-}
 
 
 .header {
@@ -387,4 +358,21 @@ a {
 }
 a:hover {
    color:var(--clr-primary-1);
+}
+
+.edit-popup{
+
+}
+
+.edit-btn{
+  font-size: 1rem;
+  border-radius: 5px;
+  color:white;
+  border:none;
+  padding:16px 20px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  
+  background-color: red;
 }

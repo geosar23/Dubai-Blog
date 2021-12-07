@@ -40,7 +40,7 @@ const BlogDetails = ({user, blog ,setBlogs}) => {
       <label>url</label>
       <input value={details.url}></input> */}
 
-      <button type="submit" className="delete-btn">Edit</button>
+      <button type="submit" className="edit-btn">Edit</button>
     </form>
   )
 
