@@ -6,7 +6,7 @@ const Home = ({blogs}) => {
     <section>
 
       <div className="title">
-        <h2>Dubai's SightSeer Blog</h2>
+        <h2>Top Dubai Landmarks</h2>
         <div className="underline"></div>
       </div>
 
