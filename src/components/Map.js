@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function Map({lat,lng}){
 
   const url=`https://maps.google.com/maps?q=${lng},${lat}&output=embed`

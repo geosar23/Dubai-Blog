@@ -1,6 +1,5 @@
 import React ,{ useState }from "react";
 import Map from "../components/Map";
-import { Link } from "react-router-dom";
 import * as blogService from '../services/blog'
 import Popup from "./Popup";
 
@@ -35,7 +34,7 @@ const BlogDetails = ({user, blog ,setBlogs}) => {
     return(
       <article className="single-blog">
 
-        <Link to={blog.photo.url} element={<img src={blog.photo.url} alt={blog.title}></img>}><img src={blog.photo.url} alt={blog.title}></img></Link>
+        <img src={blog.photo.url} alt={blog.title}></img>
         <footer>
           <div className="blog-info">
             <h4>{blog.title}</h4>

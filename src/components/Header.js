@@ -48,16 +48,13 @@ const Header = ({user, setUser}) => {
 
   return (
     <div className="header">
-      <Link to='/'><div className="logo_home"><i className="fas fa-home fa-3x"><h4>HOME</h4></i></div></Link>
-    
+      <Link to='/'><div className="logo_home"><i className="fas fa-home fa-3x"><h4>HOME</h4></i></div></Link> 
       <div className="signIn">
         {user
           ? <button className="btn" onClick={signOut}>Sign Out</button>
           : <button className="btn" onClick={()=>setShowPopup(true)}>Sign In</button>
         }
-
         {showPopup && <Popup/>}
-
       </div>
     </div>
   );
