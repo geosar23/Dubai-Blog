@@ -154,16 +154,21 @@ Header Styles
   top:0;
 }
 
+
 .logo_home{
   position: absolute;
   padding:10px;
-  color:var(--clr-gold)
+  color:var(--clr-gold);
+  opacity:0.9;
+}
+
+.logo_home:hover{
+  opacity: 1;
 }
 
 .form-popup {
   width: 100%;
   border-radius: 10px;
-  
 }
 
 
@@ -254,6 +259,11 @@ Home Styles
   cursor: pointer;
   margin-top: 2rem;
   font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.btn:hover{
+  opacity: 1;
 }
 
 
@@ -329,6 +339,7 @@ Blog Details
   transition: var(--transition);
 
   display: block;
+  text-align: center;
 }
 .single-blog:hover {
   box-shadow: var(--dark-shadow);
@@ -376,11 +387,17 @@ Blog Details
   border-color: transparent;
   cursor: pointer;
   font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.blog-footer button:hover{
+  opacity: 1;
 }
 
 .blog-footer button a{
   color:white;
 }
+
 
 .blog-footer h4{
   margin:5px;
@@ -505,10 +522,17 @@ Edit Blog Button
   border: none;
   margin: 5px;
   min-width: 100px;
-  border: 1px solid;
+  border: 2px solid;
   border-radius: 100px;
   cursor: pointer;
   font-size:15px;
+  opacity: 0.8;
+}
+
+.edit-btn:hover{
+  background-color:red;
+  color:white;
+  opacity: 1;
 }
 
 /*
@@ -550,10 +574,24 @@ Edit Blog PopUp
   background: none;
   color:var(--clr-gold);
   cursor: pointer;
+  opacity: 0.8;
+}
+
+.popup-inner i:hover{
+  color:red;
 }
 
 .popup-form button{
-  margin-left: 100px;
+  margin-left: 0px;
+  background-color: #04AA6D;
+  color: white;
+  border:none;
+  opacity: 0.8;
+}
+
+.popup-form button:hover{
+  opacity:1;
+  background-color: #04AA6D;
 }
 
 .popup-form textarea{
@@ -600,6 +638,7 @@ Edit Blog PopUp
     height: 200px;
   }
 }
+
 
 .imgPop{
   position:fixed;
