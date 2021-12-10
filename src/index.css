@@ -121,39 +121,107 @@ p {
     line-height: 1;
   }
 }
-/*  global classes */
 
-/* section */
-.section {
-  width: 90vw;
-  margin: 0 auto;
-  max-width: var(--max-width);
+label {
+  font-size: 24px;
+  color:var(--clr-gold);
+  width: 100%;
+  text-align: center;
+  margin:10px;
 }
 
-@media screen and (min-width: 992px) {
-  .section {
-    width: 95vw;
-  }
+a {
+  color:var(--clr-gold);
 }
-.btn {
-  background: var(--clr-primary-5);
-  display: inline-block;
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius);
-  text-transform: capitalize;
-  color: var(--clr-white);
-  letter-spacing: var(--spacing);
-  border-color: transparent;
-  cursor: pointer;
-  margin-top: 2rem;
-  font-size: 1.2rem;
+a:hover {
+   color:var(--clr-primary-1);
 }
+
 /*
 =============== 
-Blog
+Header Styles
 ===============
 */
-main {
+
+.header {
+  overflow: hidden;
+  background: var(--clr-primary-1);
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding:10px;
+  position: sticky;
+  top:0;
+}
+
+.logo_home{
+  position: absolute;
+  padding:10px;
+  color:var(--clr-gold)
+}
+
+.form-popup {
+  width: 100%;
+  border-radius: 10px;
+  
+}
+
+
+/*
+================= 
+Login PopUp Styles
+=================
+*/
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color:var(--clr-primary-1);
+  margin:auto;
+}
+
+.form-container h1{
+  color:var(--clr-gold)
+}
+
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: red;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+/*
+=============== 
+Home Styles
+===============
+*/
+
+.main {
   width: 90vw;
   max-width: var(--fixed-width);
   margin: 5rem auto;
@@ -174,129 +242,28 @@ main {
   margin-right: auto;
 }
 
-.single-blog {
-  background: var(--clr-white);
+.btn {
+  background: var(--clr-primary-5);
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
-  margin: 2rem 0;
-  box-shadow: var(--light-shadow);
-  transition: var(--transition);
-}
-.single-blog:hover {
-  box-shadow: var(--dark-shadow);
-}
-.single-blog img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-
-.blog-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-.blog-info h4 {
-  margin-bottom: 0;
-}
-
-
-.header {
-  overflow: hidden;
-  background: var(--clr-primary-1);
-  width: 100%;
-  margin: auto;
-  text-align: center;
-  padding:10px;
-  position: sticky;
-  top:0;
-}
-
-
-
-.logo_home{
-  position: absolute;
-  padding:10px;
-  color:var(--clr-gold)
-}
-
-
-
-.form-popup {
-  width: 100%;
-  border-radius: 10px;
-  
-}
-
-/* Add styles to the form container */
-.form-container {
-  max-width: 300px;
-  padding: 10px;
-  background-color:var(--clr-primary-1);
-  margin:auto;
-}
-
-.form-container h1{
-  color:var(--clr-gold)
-}
-
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-}
-
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Set a style for the submit/login button */
-.form-container .btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  border: none;
+  text-transform: capitalize;
+  color: var(--clr-white);
+  letter-spacing: var(--spacing);
+  border-color: transparent;
   cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
-}
-
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
-}
-
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
+  margin-top: 2rem;
+  font-size: 1.2rem;
 }
 
 
 
-label {
-  font-size: 24px;
-  color:var(--clr-gold);
-  width: 100%;
-  text-align: center;
-  margin:10px;
-}
+/*
+================ 
+Home Menu Styles
+================
+*/
 
-
-.section-center {
-  width: 90vw;
-  margin: 0 auto;
-  max-width: 1170px;
-  display: grid;
-  gap: 3rem 2rem;
-  justify-items: center;
-}
 .menu-item {
   display: grid;
   gap: 1rem 2rem;
@@ -304,7 +271,7 @@ label {
   margin-bottom: 50px;
 }
 .photo {
-  object-fit: cover;
+  object-fit:cover;
   height: 200px;
   width: 100%;
   border: 0.25rem solid;
@@ -320,14 +287,10 @@ label {
   margin-bottom: 0.5rem;
   color: var(--clr-primary-2);  
 }
-.price {
-  color: var(--clr-primary-2);
-}
+
 .item-text {
   margin-bottom: 15px;
- 
   padding-top: 1rem;
-
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -335,7 +298,8 @@ label {
   -webkit-box-orient: vertical;
 }
 
-@media screen and (min-width: 768px) {
+
+@media screen and (min-width: 500px) {
   .menu-item {
     grid-template-columns: 225px 1fr;
     gap: 0 1.25rem;
@@ -346,21 +310,187 @@ label {
   }
 }
 @media screen and (min-width: 1200px) {
-  .section-center {
-    width: 95vw;
-    grid-template-columns: 1fr 1fr;
-  }
   .photo {
     height: 150px;
   }
 }
 
-a {
-  color:var(--clr-gold);
+/*
+================ 
+Blog Details
+================
+*/
+
+.single-blog {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  margin: 5rem 5rem;
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
+
+  display: block;
 }
-a:hover {
-   color:var(--clr-primary-1);
+.single-blog:hover {
+  box-shadow: var(--dark-shadow);
 }
+.single-blog img {
+  width: 25%;
+  height: auto;
+  object-fit: cover;
+  margin: 2rem;
+  border-radius: 5px;
+}
+
+.single-blog-details{
+  display: flex;
+}
+
+.blog-headers h4{
+  align-items: center;
+  margin: 1rem;
+  text-align: center;
+  color: var(--clr-gold);
+  font-size: 30px;
+}
+
+.blog-info {
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem;
+}
+
+.blog-footer{
+  margin: auto;
+  text-align:center;
+}
+
+.blog-footer button{
+  background: var(--clr-primary-5);
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  margin:10px;
+  border-radius: 100px;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  border-color: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.blog-footer button a{
+  color:white;
+}
+
+.blog-footer h4{
+  margin:5px;
+}
+
+.map iframe{
+  margin:5px;
+  width: 500px;
+  height: 300px;
+}
+
+/*
+================ 
+Media Screen styles
+For  BlogDetails
+================
+*/
+
+@media screen and (max-width: 1000px) {
+  .single-blog {
+    text-align: center;
+    margin: 2rem 2rem;
+  }
+  .single-blog:hover {
+    box-shadow: var(--dark-shadow);
+  }
+  .single-blog img {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    max-height: 1000px;
+    object-fit:fill;
+    margin: 0rem;
+  }
+  
+  .single-blog-details{
+    display: block;
+  }
+
+  
+  .blog-info {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .blog-footer{
+    margin: auto;
+    text-align:center;
+  }
+  
+  .blog-footer button{
+    background: var(--clr-primary-5);
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    margin:10px;
+    border-radius: 100px;
+    text-transform: capitalize;
+    letter-spacing: var(--spacing);
+    border-color: transparent;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .blog-footer button a{
+    color:white;
+  }
+  
+  .blog-footer h4{
+    margin:5px;
+  }
+  
+}
+
+@media screen and (max-width: 750px) {
+
+  .single-blog {
+    text-align: center;
+    margin: 1rem 1rem;
+  }
+
+  .single-blog img {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit:fill;
+    margin: 0rem;
+  }
+
+
+  .map iframe{
+    width: 300px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width:400px){
+  .map iframe{
+    width:250px;
+    height: 200px;
+  }
+}
+
+
+/*
+================ 
+Edit Blog Button
+================
+*/
 
 .edit-btn-container{
   display: flex;
@@ -369,15 +499,23 @@ a:hover {
 }
 
 .edit-btn{
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
+  background-color: white;
+  color: red;
+  padding: 10px 10px;
   border: none;
-  margin: 10px;
+  margin: 5px;
   min-width: 100px;
-  border-radius: 4px;
+  border: 1px solid;
+  border-radius: 100px;
   cursor: pointer;
+  font-size:15px;
 }
+
+/*
+================ 
+Edit Blog PopUp
+================
+*/
 
 .popup{
   position:fixed;

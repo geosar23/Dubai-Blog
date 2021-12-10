@@ -42,12 +42,10 @@ function App() {
   return (
     <Router> 
       <Header setUser={setUser} user={user}/>
-      <main>
       <Routes>
         <Route exact path='/' element={ <Home blogs={blogs}/>}/>
         <Route exact path='/blog/:blogId' element={<Blog blogs={blogs} setBlogs={setBlogs} user={user}/>}/>      
       </Routes>
-      </main>
     </Router>    
   )
 }

@@ -8,10 +8,9 @@ const Blog = ({blogs, setBlogs, user}) => {
   
   const params=useParams()
   const [selectedBlog,setSelectedBlog]=useState()
-  const [loading,setLoading]=useState()
+  const [loading,setLoading]=useState(true)
 
   async function fetchData(){
-    setLoading(true)
     try {
       const response = await blogService.getBlog(params.blogId)
       setSelectedBlog(response)

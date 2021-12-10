@@ -3,7 +3,7 @@ import BlogCard from '../components/BlogCard';
 
 const Home = ({blogs}) => {
   return (
-    <section>
+    <section className='main'>
 
       <div className="title">
         <h2>Top Dubai Landmarks</h2>

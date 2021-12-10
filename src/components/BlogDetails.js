@@ -3,7 +3,7 @@ import Map from "../components/Map";
 import * as blogService from '../services/blog'
 import Popup from "./Popup";
 
-const BlogDetails = ({user, blog ,setBlogs}) => {
+const BlogDetails = ({user, blog ,setBlogs, loading, setLoading}) => {
   const [popUp,setPopUp]=useState(false)
   const [editedBlog,setEditedBlog]=useState({
     objectId:blog.objectId,
@@ -33,23 +33,24 @@ const BlogDetails = ({user, blog ,setBlogs}) => {
 
     return(
       <article className="single-blog">
-
-        <img src={blog.photo.url} alt={blog.title}></img>
-        <footer>
-          <div className="blog-info">
-            <h4>{blog.title}</h4>
-            
-            <h4 className="blog-price"><i className="fas fa-map-marker-alt"></i> {blog.location[0]} , {blog.location[1]}</h4>
+          <div className="single-blog-details">
+            <img src={blog.photo.url} alt={blog.title}></img>
+            <div className="blog-info">
+              <div className="blog-headers">
+                <h4>{blog.title}</h4>
+                {user && editBlog}
+              </div>
+              <p>{blog.description}</p>
+              <div className="blog-footer">
+                <button><a target="_blank" rel="noreferrer" href={blog.url}>Find Out More</a></button>
+                <h4><i className="fas fa-map-marker-alt"></i> {blog.location[1]} , {blog.location[0]}</h4>
+                <Map lat={blog.location[0]} lng={blog.location[1]}/>
+              </div>
+            </div>
           </div>
-          <p>{blog.description}</p>
-          <a target="_blank" rel="noreferrer" href={blog.url}>{blog.url}</a>
-          <Map lat={blog.location[0]} lng={blog.location[1]}/>
-          {user && editBlog}
           <Popup popUp={popUp} setPopUp={setPopUp} updateBlog={updateBlog} editedBlog={editedBlog} setEditedBlog={setEditedBlog}>
             <h3>My PopUp</h3>
           </Popup>      
-        </footer>
-
       </article>
     )
   }
