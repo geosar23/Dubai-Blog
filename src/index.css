@@ -662,6 +662,7 @@ Edit Blog PopUp
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .imgPop .close-btn{
@@ -673,7 +674,7 @@ Edit Blog PopUp
   background: none;
   color:var(--clr-gold);
   cursor: pointer;
-  z-index: 10;
+  z-index: 1;
 }
 
 .innerimgPop{
