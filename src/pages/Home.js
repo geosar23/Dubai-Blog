@@ -15,7 +15,7 @@ const Home = ({blogs}) => {
           return <BlogCard key={blog.objectId} {...blog}/>
         })}
       </div>
-
+      
     </section>
   )
 };

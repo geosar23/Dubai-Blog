@@ -46,6 +46,7 @@ function App() {
         <Route exact path='/' element={ <Home blogs={blogs}/>}/>
         <Route exact path='/blog/:blogId' element={<Blog blogs={blogs} setBlogs={setBlogs} user={user}/>}/>      
       </Routes>
+      <div className='footer'></div>
     </Router>    
   )
 }
