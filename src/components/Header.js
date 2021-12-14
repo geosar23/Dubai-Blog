@@ -4,27 +4,41 @@ import * as userService from '../services/user';
 
 const Header = ({user, setUser}) => {
   const [showPopup,setShowPopup]=useState(false)
+  const [error,setError]=useState()
 
   async function signIn(e){
     e.preventDefault()
+    setError()
     const username = e.target.username.value
     const password = e.target.password.value
     try {
         const response = await userService.signIn(username, password)
         setUser(response)
         setShowPopup(false)
+        localStorage.setItem('user', JSON.stringify(response))
     } catch (error) {
-      console.error(error)
+      if(error.message==101){
+        setError('Invalid username or password')
+      }else{
+        setError('Sorry something went wrong')
+      }
     }
   }
+
 
   async function signOut(){
     try {
       await userService.signOut(user)
       setUser()
+      localStorage.clear()
     } catch (error) {
       console.error(error)
     }
+  }
+
+  function handlePopUpClose(){
+    setShowPopup(false)
+    setError()
   }
 
   const Popup = () => {
@@ -38,9 +52,11 @@ const Header = ({user, setUser}) => {
 
             <label>Password</label>
             <input type="password" name="password" placeholder="Enter Password"  required/>
-      
+
+            {error && <div style={{color:"red"}}>{error}</div> }
+
             <button type="submit" className="btn">Login</button>
-            <button type="button" className="btn cancel" onClick={()=>setShowPopup(false)}>Close</button>
+            <button type="button" className="btn cancel" onClick={handlePopUpClose}>Close</button>
           </form>
         </div>
     )

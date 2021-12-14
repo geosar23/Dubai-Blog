@@ -6,7 +6,7 @@ function ImagePop({imgPop, setImgPop, photo}){
         <div className="imgPop">
             <button className="close-btn" onClick={()=>setImgPop(false)}><i className="fas fa-times fa-3x"></i></button>
             <div className="innerimgPop">
-                <img src={photo.url}></img>
+                <img src={photo.url} alt="404 not found"></img>
             </div>   
         </div>
     ) : <></>

@@ -29,9 +29,14 @@ function App() {
     }
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchBlogs()
-  },[])
+    const loggedInUser = localStorage.getItem("user");
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      setUser(foundUser);
+    }
+  }, []);
 
   if(loading){
     return <main>

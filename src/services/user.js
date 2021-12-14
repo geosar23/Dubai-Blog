@@ -9,6 +9,11 @@ async function signIn(username, password) {
 		})
 	})
 	const body = await response.json()
+
+	if(!response.ok){
+		throw new Error(body.errorMessage.code)
+	}
+
 	return body
 }
 
