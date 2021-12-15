@@ -19,11 +19,16 @@ async function signIn(username, password) {
 
 async function signOut(user) {
 	const url = 'https://firefighter-5325.instashop.ae/api/users/logout'
-	await fetch(url, {
+	const response = await fetch(url, {
 		headers: {
 			'x-sessionToken': user.sessionToken
 		}
 	})
+	
+	if(!response.ok){
+		throw new Error(response.status)
+	}
+
 }
 
 export {

@@ -4,11 +4,12 @@ import * as userService from '../services/user';
 
 const Header = ({user, setUser}) => {
   const [showPopup,setShowPopup]=useState(false)
-  const [error,setError]=useState()
+  const [errorIn,setErrorIn]=useState()
+  const [errorOut,setErrorOut]=useState()
 
   async function signIn(e){
     e.preventDefault()
-    setError()
+    setErrorIn()
     const username = e.target.username.value
     const password = e.target.password.value
     try {
@@ -18,27 +19,28 @@ const Header = ({user, setUser}) => {
         localStorage.setItem('user', JSON.stringify(response))
     } catch (error) {
       if(error.message==101){
-        setError('Invalid username or password')
+        setErrorIn('Invalid username or password')
       }else{
-        setError('Sorry something went wrong')
+        setErrorIn('Sorry something went wrong')
       }
     }
   }
 
 
   async function signOut(){
+    setErrorOut()
     try {
       await userService.signOut(user)
       setUser()
       localStorage.clear()
     } catch (error) {
-      console.error(error)
+      setErrorOut(error)
     }
   }
 
   function handlePopUpClose(){
     setShowPopup(false)
-    setError()
+    setErrorIn()
   }
 
   const Popup = () => {
@@ -53,7 +55,7 @@ const Header = ({user, setUser}) => {
             <label>Password</label>
             <input type="password" name="password" placeholder="Enter Password"  required/>
 
-            {error && <div style={{color:"red"}}>{error}</div> }
+            {errorIn && <div style={{color:"red"}}>{errorIn}</div> }
 
             <button type="submit" className="btn">Login</button>
             <button type="button" className="btn cancel" onClick={handlePopUpClose}>Close</button>
@@ -72,6 +74,7 @@ const Header = ({user, setUser}) => {
         }
         {showPopup && <Popup/>}
       </div>
+      {errorOut && <div style={{color:"red"}}>{errorOut+" logout failed"}</div>}
     </div>
   );
 };

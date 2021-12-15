@@ -2,7 +2,6 @@ async function getBlogs(){
 
     const url= 'https://firefighter-5325.instashop.ae/api/landmarks'
     const response=await fetch(url)
-    console.log(response)
 
     if(!response.ok){
         throw new Error(response.status)
@@ -10,8 +9,6 @@ async function getBlogs(){
 
     const blogs=await response.json()
     return blogs
-
-    
 }
 
 async function getBlog(id){
