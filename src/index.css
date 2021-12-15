@@ -206,11 +206,16 @@ Login PopUp Styles
   background-color: #04AA6D;
   color: white;
   padding: 16px 20px;
-  border: none;
   cursor: pointer;
   width: 100%;
-  margin-bottom:10px;
   opacity: 0.8;
+
+  border-radius: var(--radius);
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  border-color: transparent;
+  margin-top: 2rem;
+  font-size: 1.2rem;
 }
 
 .form-container .cancel {
@@ -250,7 +255,7 @@ Home Styles
   margin-right: auto;
 }
 
-.btn {
+.header-btn {
   background: var(--clr-primary-6);
   display: inline-block;
   padding: 0.25rem 0.5rem;
@@ -264,7 +269,7 @@ Home Styles
   font-size: 1.2rem;
 }
 
-.btn:hover{
+.header-btn:hover{
   background: var(--clr-primary-5);
 }
 
@@ -561,6 +566,10 @@ Edit Blog PopUp
   color:red;
 }
 
+.popup-form{
+  text-align: center;
+}
+
 .popup-form button{
   margin-left: 0px;
   background-color: #04AA6D;
@@ -616,12 +625,6 @@ Edit Blog PopUp
   
   .descriptionTextArea{
     height: 200px;
-  }
-}
-
-@media screen and (min-width: 1000px){
-  .popup-form button{
-    margin-left: 100px;
   }
 }
 

@@ -27,7 +27,6 @@ function App() {
     }catch(error){  
       setError(error +' something is missing')
       setBlogs([])
-      console.log(blogs)
     }finally{
       setLoading(false)
     }

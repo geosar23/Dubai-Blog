@@ -11,16 +11,18 @@ const BlogDetails = ({user, blog ,setBlogs, loading, setLoading}) => {
     short_info:blog.short_info,
     description:blog.description
   })
+  const [errorPut,setErrorPut]=useState()
 
   async function updateBlog(e){
     e.preventDefault()
+    setErrorPut()
     try {
       await blogService.updateBlog(editedBlog,user)
       const response=await blogService.getBlogs()
       setBlogs(response)
       setPopUp(false)
     } catch (error) {
-      console.error(error)
+      setErrorPut(error)
     }
   }
 
@@ -50,7 +52,7 @@ const BlogDetails = ({user, blog ,setBlogs, loading, setLoading}) => {
                 <img src={blog.photo.url} alt={blog.title}></img>
                 {blog.description}
               </p> 
-          <Popup popUp={popUp} setPopUp={setPopUp} updateBlog={updateBlog} editedBlog={editedBlog} setEditedBlog={setEditedBlog}>
+          <Popup popUp={popUp} setPopUp={setPopUp} updateBlog={updateBlog} editedBlog={editedBlog} setEditedBlog={setEditedBlog} errorPut={errorPut} setErrorPut={setErrorPut}>
             <h3>My PopUp</h3>
           </Popup>      
       </article>

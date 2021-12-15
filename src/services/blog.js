@@ -20,7 +20,7 @@ async function getBlog(id){
 
 async function updateBlog(blog,user){
     const url=`https://firefighter-5325.instashop.ae/api/landmarks/${blog.objectId}`
-    await fetch(url, {
+    const response = await fetch(url, {
 		method: 'PUT',
 		headers: { 
             'Content-Type': 'application/json' ,
@@ -32,6 +32,10 @@ async function updateBlog(blog,user){
             description:blog.description	
 		})
 	})
+
+	if(!response.ok){
+		throw new Error(response.status)
+	}
 }
 
 export {
