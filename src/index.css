@@ -274,13 +274,13 @@ Home Styles
 }
 
 .footer{
-  overflow: hidden;
-  background: var(--clr-primary-1);
-  width: 100%;
-  margin: auto;
   text-align: center;
-  padding:20px;
+  background: var(--clr-primary-1);
+  clear: both;
+  position: relative;
+  height: 30px;
 }
+
 
 /*
 ================ 
