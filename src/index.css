@@ -275,9 +275,6 @@ Home Styles
   margin: auto;
   text-align: center;
   padding:20px;
-  position: sticky;
-  top:0;
-  z-index:1;
 }
 
 /*
@@ -395,17 +392,13 @@ Blog Details
   border-color: transparent;
   cursor: pointer;
   font-size: 1.2rem;
+  color:white
 }
 
 .blog-footer button:hover{
   opacity: 1;
   background:var(--clr-primary-5);
 }
-
-.blog-footer button a{
-  color:white;
-}
-
 
 .blog-footer h4{
   margin:5px;
@@ -675,3 +668,16 @@ Edit Blog PopUp
 }
 
 
+.errorDiv{
+  text-align: center;
+  width:100%
+}
+
+.errorDiv img{
+  width: 80%;
+}
+
+.errorDiv h2{
+  color:red;
+  text-align: center;
+}

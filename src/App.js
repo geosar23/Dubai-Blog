@@ -16,14 +16,18 @@ function App() {
   const [loading,setLoading]=useState(true)
   const [blogs,setBlogs]=useState([])
   const [user,setUser]=useState()
+  const [error,setError]=useState()
 
   const fetchBlogs= async () => {
     setLoading(true)
+    setError()
     try{
       const response =await blogService.getBlogs()
       setBlogs(response)
     }catch(error){  
-      console.error(error)
+      setError(error +' something is missing')
+      setBlogs([])
+      console.log(blogs)
     }finally{
       setLoading(false)
     }
@@ -44,13 +48,21 @@ function App() {
     </main>
   }
 
+  const errorDiv = (
+    <div className='errorDiv'>
+      <h2>{error}</h2>
+      <img src="error.png" alt="error-img"></img>
+    </div>
+  )
+
   return (
     <Router> 
       <Header setUser={setUser} user={user}/>
       <Routes>
-        <Route exact path='/' element={ <Home blogs={blogs}/>}/>
+        <Route exact path='/' element={error ? errorDiv : <Home blogs={blogs}/>}/>
         <Route exact path='/blog/:blogId' element={<Blog blogs={blogs} setBlogs={setBlogs} user={user}/>}/>      
       </Routes>
+      {/* {blogs.length===0 && error && errorDiv} */}
       <div className='footer'></div>
     </Router>    
   )

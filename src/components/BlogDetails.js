@@ -33,7 +33,7 @@ const BlogDetails = ({user, blog ,setBlogs, loading, setLoading}) => {
 
   const footer = (
     <div className="blog-footer">
-      <button><a target="_blank" rel="noreferrer" href={blog.url}>Find Out More</a></button>
+      <a target="_blank" rel="noreferrer" href={blog.url}><button>Find Out More</button></a>
       <h4><i className="fas fa-map-marker-alt"></i> {blog.location[1]} , {blog.location[0]}</h4>
       <Map lat={blog.location[0]} lng={blog.location[1]}/>
     </div>
