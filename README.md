@@ -4,6 +4,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+# Install React App
+### `npm install -g create-react-app`
+
+# If does not start try with Node14
+
 ### `npm install`
 
 ## Available Scripts
