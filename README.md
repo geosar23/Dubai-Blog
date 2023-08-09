@@ -12,11 +12,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### `npm install`
 
-## Available Scripts
-
-In the project directory, you can run:
+## Start app with
 
 ### `npm start`
+
+## Sign in to use as admin
+### `username: admin`
+### `password: admin`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
