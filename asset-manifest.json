@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Dubai-Blog/static/css/main.68051e69.css",
+    "main.js": "/Dubai-Blog/static/js/main.b044edf6.js",
+    "index.html": "/Dubai-Blog/index.html",
+    "main.68051e69.css.map": "/Dubai-Blog/static/css/main.68051e69.css.map",
+    "main.b044edf6.js.map": "/Dubai-Blog/static/js/main.b044edf6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.68051e69.css",
+    "static/js/main.b044edf6.js"
+  ]
+}
