@@ -1,6 +1,6 @@
 {
   "name": "reminder",
-  "homepage": "http://geosar23.github.io/Dubai-Blog/",
+  "homepage": "http://geosar23.github.io/Dubai-Blog",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -36,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
