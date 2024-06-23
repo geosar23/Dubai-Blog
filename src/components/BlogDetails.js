@@ -49,7 +49,7 @@ const BlogDetails = ({user, blog ,setBlogs, loading, setLoading}) => {
                 {user && editBlog}
               </div>
               <p>
-                <img src={blog.photo.url} alt={blog.title}></img>
+                <img src={blog.photo} alt={blog.title}></img>
                 {blog.description}
               </p> 
           <Popup popUp={popUp} setPopUp={setPopUp} updateBlog={updateBlog} editedBlog={editedBlog} setEditedBlog={setEditedBlog} errorPut={errorPut} setErrorPut={setErrorPut}>
