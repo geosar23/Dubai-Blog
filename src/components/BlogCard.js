@@ -8,7 +8,7 @@ const BlogCard = ({objectId,photo_thumb,title,short_info,photo}) => {
 
   const openImg = (
     <div className="imgpop-container">
-      <a onClick={()=>setImgPop(true)}><img src={photo_thumb.url} alt={title} className='photo' /></a>
+      <a onClick={()=>setImgPop(true)}><img src={photo_thumb} alt={title} className='photo' /></a>
     </div>
   )
 
