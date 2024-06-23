@@ -55,7 +55,7 @@ function App() {
   )
 
   return (
-    <Router> 
+    <Router basename='/Dubai-Blog'> 
       <Header setUser={setUser} user={user}/>
       <Routes>
         <Route exact path='/' element={error ? errorDiv : <Home blogs={blogs}/>}/>
